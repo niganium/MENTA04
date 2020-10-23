@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MENTA01</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="main-title">RoR</h1>
+      <nav>
+        <ul class="header-lists">
+          <li class="header-list">
+            <%= link_to "Login", new_session_path, class: "header-link" %>
+          </li>
+          <li class="header-list">
+            <%= link_to  "Register", new_user_path, class: "header-link" %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="form-wrapper">
+          <div class="form-header">
+            <h2 class="form-title">Login</h2>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    </main>
+
+  </body>
+</html>
