@@ -1,32 +1,30 @@
-<div class="form-container">
-	<%= form_with url: users_path, method: "post" do |f| %>
-    <div class="field">
-	    <%= f.label :name, "Name", class: "form-label" %>
-	    <%= f.text_field :name, class: "form-field text-field" %>
-	  </div>
+<div class="form-wrapper">
+	<div class="form-header">
+		<h2 class="form-title">Register</h2>
+  </div>
+	<div class="form-container">
+		<%= form_with url: users_path, method: "post" do |f| %>
+			<div class="field">
+				<%= f.label :name, "Name", class: "form-label" %>
+				<%= f.text_field :name, class: "form-field text-field" %>
+			</div>
 
-	  <div class="field">
-	    <%= f.label :email, "E-mail Addres", class: "form-label" %>
-	    <%= f.text_field :email, class: "form-field text-field" %>
-	  </div>
+			<div class="field">
+				<%= f.label :email, "E-mail Addres", class: "form-label" %>
+				<%= f.text_field :email, class: "form-field text-field" %>
+			</div>
 
-    <div class="field">
-	    <%= f.label :password, "Password", class: "form-label" %>
-	    <%= f.text_field :password, class: "form-field text-field" %>
-	  </div>
+			<div class="field">
+				<%= f.label :password, "Password", class: "form-label" %>
+				<%= f.password_field :password, class: "form-field text-field password" %>
+			</div>
 
-	  <div class="field">
-	    <%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
-	    <%= f.text_field :password_confirmation, class: "form-field text-field" %>
-	  </div>
+			<div class="field">
+				<%= f.label :password_confirmation, "Confirm Password", class: "form-label" %>
+				<%= f.password_field :password_confirmation, class: "form-field text-field password" %>
+			</div>
 
-		<div class="remember-field">
-			<%= f.label :remember_me do %>
-  			<%= f.check_box :remember_me %>
-  			<span>Remember me</span>
-			<% end %>
-		</div>
-
-  	<%= f.submit "確定", class:"submit" %>
-	<% end %>	
+			<%= f.submit "確定", class:"submit" %>
+		<% end %>	
+	</div>
 </div>
