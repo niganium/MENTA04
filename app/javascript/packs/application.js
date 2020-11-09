@@ -15,3 +15,16 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+window.addEventListener('load', (event) => {
+  const parentMenu = document.getElementById('header-list');
+  const childllenMenu = document.getElementById('menus');
+  if (parentMenu !== null) {
+    parentMenu.addEventListener('click', function(ev) {
+      ev.preventDefault();
+      parentMenu.classList.toggle('active');
+      childllenMenu.classList.toggle('active'); 
+    })
+  }
+});

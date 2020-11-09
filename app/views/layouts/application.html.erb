@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MENTA01</title>
+    <title>MENTA02</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,21 +11,43 @@
 
   <body>
     <header>
-      <h1 class="main-title">RoR</h1>
+      <h1 class="main-title">
+        <% if logged_in? %>
+          <%= link_to "RoR", users_path, data: {turbolinks: false}  %>
+        <% else %>
+          <%= link_to "RoR", root_path %>
+        <% end %>
+      </h1>
       <nav>
         <ul class="header-lists">
-          <li class="header-list">
-            <%= link_to "Login", new_session_path, class: "header-link" %>
-          </li>
-          <li class="header-list">
-            <%= link_to  "Register", new_user_path, class: "header-link" %>
-          </li>
+          <% if logged_in? %>
+            <li class="header-list">
+              <%= link_to current_user.name, users_path, class: "header-link user-header-links", id: "header-list" %>
+            </li>
+            <div class="header-open-menus" id="menus">
+              <ul>
+                <li>
+                  <%= link_to "Logout", session_path(current_user.id), method: :delete, class: "header-link" %>
+                </li>
+              </ul>
+            </div>
+          <% else %>
+            <li class="header-list">
+              <%= link_to "Login", new_session_path, class: "header-link" %>
+            </li>
+            <li class="header-list">
+              <%= link_to  "Register", new_users_path, class: "header-link" %>
+            </li>
+          <% end %>
         </ul>
       </nav>
     </header>
 
     <main>
       <div class="container">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "notice") %>
+        <% end %>
         <%= yield %>
       </div>
     </main>

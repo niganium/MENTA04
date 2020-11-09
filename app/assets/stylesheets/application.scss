@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 body {
 	background-color: #F8FAFC;
 	height: 100vh;
@@ -39,12 +40,26 @@ header {
 	background-color: white;
 }
 
-.main-title {
+.main-title a {
 	font-size: 20px;
+	color: #656971;
 }
 
 .header-lists {
 	display: flex;
+}
+
+.user-header-links {
+	position: relative;
+}
+
+.user-header-links::after{
+	content: "\02228";
+	padding-left: 10px;
+}
+
+.user-header-links .active::after{
+	content: "\02227";
 }
 
 .header-list {
@@ -54,6 +69,22 @@ header {
 
 .header-link {
 	color: #656971;
+}
+
+.header-open-menus {
+	display: none;
+}
+
+.header-open-menus.active {
+	display: block;
+	position: absolute;
+	background: white;
+	border: 1px solid;
+	border-radius: 5px;
+	top: 55px;
+	right: 5%;
+	padding: 5px 25px;
+	text-align: center;
 }
 
 .container {
