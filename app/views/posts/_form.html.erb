@@ -1,0 +1,26 @@
+<div class="post-field">
+	<div class="form-container">
+		<%= form_with model: post do |f| %>
+      <% if post.errors.any? %>
+        <div>
+          <ul>
+          <% post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+			<div class="field">
+				<%= f.label :title, "タイトル", class: "form-label" %>
+				<%= f.text_field :title, class: "form-field text-field" %>
+			</div>
+
+			<div class="field">
+				<%= f.label :content, "コンテンツ", class: "form-label" %>
+				<%= f.text_area :content, class: "form-field text-field content-field" %>
+			</div>
+
+			<%= f.submit "確定", class:"submit" %>
+		<% end %>	
+	</div>
+</div>

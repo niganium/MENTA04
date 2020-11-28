@@ -12,7 +12,13 @@
  *
  *= require_tree .
  *= require_self
- */
+ */ 
+ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+ @import '@fortawesome/fontawesome-free/scss/fontawesome';
+ @import '@fortawesome/fontawesome-free/scss/solid';
+ @import '@fortawesome/fontawesome-free/scss/regular';
+ @import '@fortawesome/fontawesome-free/scss/brands';
+ @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 
 body {
@@ -63,7 +69,7 @@ header {
 }
 
 .header-list {
-	margin-left: 10px;
+	margin-left: 15px;
 	font-size: 15px;
 }
 

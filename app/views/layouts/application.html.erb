@@ -13,7 +13,7 @@
     <header>
       <h1 class="main-title">
         <% if logged_in? %>
-          <%= link_to "RoR", users_path, data: {turbolinks: false}  %>
+          <%= link_to "RoR", root_path, data: {turbolinks: false}  %>
         <% else %>
           <%= link_to "RoR", root_path %>
         <% end %>
@@ -21,6 +21,12 @@
       <nav>
         <ul class="header-lists">
           <% if logged_in? %>
+            <li class="header-list">
+              <%= link_to "みんなの投稿", posts_path, class: "header-link" %>
+            </li>
+            <li class="header-list">
+              <%= link_to "新規投稿", new_post_path, class: "header-link" %>
+            </li>
             <li class="header-list">
               <%= link_to current_user.name, users_path, class: "header-link user-header-links", id: "header-list" %>
             </li>
